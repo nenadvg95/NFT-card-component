@@ -1,0 +1,207 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+ /* Custom properties */
+:root{
+    --clr-soft-blue:hsl(215, 51%, 70%);
+    --clr-cyan:hsl(178, 100%, 50%);
+    --clr-bg-body:hsl(217, 54%, 11%);
+    --clr-bg-card:hsl(216, 50%, 16%);
+    --clr-line:hsl(215, 32%, 27%);
+
+    --ff-primary: 'Outfit', sans-serif;
+    --fw-300:300;
+    --fw-400:400;
+    --fw-600:600;
+
+    --fs-300:1rem;
+    --fs-400:1.125rem;
+    --fs-500:1.25rem;
+    --fs-600: 1.5rem;
+
+}
+
+/* CSS RESET  by Andy Bell */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  font-size: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body{
+    background-color: var(--clr-bg-body);
+    display: grid;
+    place-content: center;
+    color: var(--clr-soft-blue);
+    font-size: var(--fs-400);
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-300);
+}
+
+.card-container{
+    --box-shadow-clrOne:hsl(217, 46%, 11%) ;
+    --box-shadow-clrTwo:hsl(217,38%,11%);
+    background-color: var(--clr-bg-card);
+    padding: 1.5rem;
+    max-width: 22rem;
+    box-shadow: 0 2rem 0 8px var(--box-shadow-clrTwo),
+    0 0 0  20px var(--box-shadow-clrOne);
+    border-radius: 1rem;
+    display: grid;
+    justify-content: start;
+}
+
+.image-container{
+    position: relative;
+    max-width: 22rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.nft{
+    object-fit: cover;
+    object-position: center;
+}
+.content{
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    background-color: var(--clr-cyan);
+}
+
+.nft,
+.content{
+    transition: .4s ease-in-out;
+}
+
+.content.accent{
+    opacity: 0;
+}
+.content:hover.accent{
+    opacity: .6;
+}
+
+.title{
+    font-size: var(--fs-600);
+    margin: 1rem 0;
+    font-weight: var(--fw-600);
+}
+.white-text{
+    color: white;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+}
+.flex-flow{
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fs-300);
+    margin-top: 1.5rem;
+}
+.line{
+    width: 100%;
+    color: red;
+    border: none;
+    background-color: var(--clr-line);
+    height: 1px;
+    margin: 1.5rem auto; 
+}
+
+.avatar{
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.author-flex{
+    font-size: var(--fs-300);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.price{
+    font-weight: var(--fw-600);
+    color: var(--clr-cyan);
+}
+
+.accent:hover{
+    transition: .5s;
+    color: var(--clr-cyan);
+    cursor: pointer;
+}
+
+
+
